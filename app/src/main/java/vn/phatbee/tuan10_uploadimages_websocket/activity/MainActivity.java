@@ -1,4 +1,4 @@
-package vn.phatbee.tuan10_uploadimages_websocket;
+package vn.phatbee.tuan10_uploadimages_websocket.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -37,6 +37,9 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vn.phatbee.tuan10_uploadimages_websocket.Const;
+import vn.phatbee.tuan10_uploadimages_websocket.R;
+import vn.phatbee.tuan10_uploadimages_websocket.RealPathUtil;
 import vn.phatbee.tuan10_uploadimages_websocket.model.ImageUpload;
 import vn.phatbee.tuan10_uploadimages_websocket.retrofit.ServiceAPI;
 
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageViewChoose, imageViewUpload;
     EditText editTextUserName;
     TextView textViewUsername;
+    Button btnNextUpload;
     private Uri mUri;
     private ProgressDialog mProgressDialog;
     public static final int MY_REQUEST_CODE=100;
@@ -91,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AnhXa();
+
+        btnNextUpload = findViewById(R.id.btnNextUpload);
+        btnNextUpload.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
         mProgressDialog = new ProgressDialog(MainActivity.this);
         mProgressDialog.setMessage("Đang tải lên...");
         btnChoose.setOnClickListener(v -> CheckPermission());

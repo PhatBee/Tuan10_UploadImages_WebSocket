@@ -48,5 +48,8 @@ dependencies {
     //load ảnh với Glide
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
+    implementation(libs.circleimageview)
+    implementation (libs.okhttp)
+
 
 }

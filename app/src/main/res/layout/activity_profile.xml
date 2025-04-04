@@ -144,4 +144,15 @@
         android:textColor="@color/red"
         android:background="@drawable/button_border_red"
         android:layout_marginTop="8dp"/>
+
+    <!-- Nút Tiep theo -->
+    <Button
+        android:id="@+id/btnNextLightControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TIẾP THEO"
+        android:textAllCaps="true"
+        android:textColor="@color/red"
+        android:background="@drawable/button_border_red"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>

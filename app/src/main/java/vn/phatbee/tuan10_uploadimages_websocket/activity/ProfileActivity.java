@@ -1,14 +1,13 @@
 package vn.phatbee.tuan10_uploadimages_websocket.activity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -21,11 +20,20 @@ public class ProfileActivity extends AppCompatActivity {
     // Thêm hằng số này
     private static final int STORAGE_PERMISSION_CODE = 100;
     private CircleImageView imgAvatar;
+    Button btnNextLightControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        btnNextLightControl = findViewById(R.id.btnNextLightControl);
+        btnNextLightControl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, LightControlClientActivity.class);
+                startActivity(intent);
+            }
+        });
 
         imgAvatar = findViewById(R.id.imgAvatar);
         imgAvatar.setOnClickListener(new View.OnClickListener() {
